@@ -38,11 +38,12 @@ label{
 label:hover{
     background-color: lightgrey;
     color: black;
+    font-size: 16px;
 }
 .input{
     text-align: center;
     color: grey;
-    font-size: 25px;
+    font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
     
