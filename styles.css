@@ -1,0 +1,167 @@
+body{
+   background-color: white;
+    padding-top: 40px;
+   
+}
+.container{
+    background-color: black;
+    width: 80%;
+    height: fit-content;
+    margin: auto 100px;
+    border-radius: 10px;
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    transition: all ease 3000ms;
+ 
+}
+.container:hover{
+    box-shadow: 2px 4px 1px green;
+}
+.wrapper{
+   
+   display: flex;
+   justify-content: center;
+    display: grid;
+    grid-template-columns: 250px 250px 100px;
+    gap: 10px;
+    text-align: center;
+}
+label{
+    background-color: gray;
+    padding: 15px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all ease 3000ms;
+}
+label:hover{
+    background-color: lightgrey;
+    color: black;
+}
+.input{
+    text-align: center;
+    color: grey;
+    font-size: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+button{
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+img{
+    width: 40px;
+}
+.div{
+    margin-top: 30px;
+}
+.mtn-ul{
+    list-style: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+   
+}
+.mtn-ul li{
+    background-color:white;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 5px;
+    padding-left:5px;
+    color: black;
+    cursor: pointer;
+    transition: all ease 300ms;
+}
+.mtn-ul li:hover {
+    background-color: yellow;
+    color: black;
+
+}
+.glo-ul{
+    list-style: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 20px;
+
+}
+.glo-ul li{
+    background-color:white;
+    border: 1px solid green;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 5px;
+    padding-left:5px;
+    color: black;
+    transition: all ease 300ms;
+}
+.glo-ul li:hover{
+    background-color: lawngreen;
+    color: white;
+    border: none;
+}
+.airtel-ul{
+    list-style: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.airtel-ul li{
+    background-color:white;
+    border: 1px solid red;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 5px;
+    padding-left:5px;
+    color: black;
+    padding: 10px;
+    transition: all ease 3000ms;
+}
+.airtel-ul li img{
+    width: 50px;
+}
+.airtel-ul li:hover{
+    background-color: rgb(232, 78, 78);
+    color: white;
+    border: none;
+}
+.etisalat{
+    list-style: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.etisalat li{
+    background-color:white;
+    color: black;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 5px;
+    padding-left:5px;
+    padding: 10px;
+    transition: all ease 3000ms;
+}
+.etisalat li:hover{
+    background-color:rgb(101, 221, 101);
+    color: white;
+}
