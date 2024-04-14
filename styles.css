@@ -18,36 +18,33 @@ body{
 .container:hover{
     box-shadow: 2px 4px 1px green;
 }
+h1{
+    text-align: center;
+}
 .wrapper{
-   
+    
    display: flex;
    justify-content: center;
     display: grid;
-    grid-template-columns: 250px 250px 100px;
+    grid-template-columns: 250px 100px;
     gap: 10px;
     text-align: center;
 }
-label{
-    background-color: gray;
+.input{
+    background-color: rgb(238, 228, 228);
+    color: black;
     padding: 15px 10px;
     border-radius: 5px;
     white-space: nowrap;
     cursor: pointer;
     transition: all ease 3000ms;
 }
-label:hover{
+.input:hover{
     background-color: lightgrey;
     color: black;
     font-size: 16px;
 }
-.input{
-    text-align: center;
-    color: grey;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    
-}
+
 button{
     background-color: green;
     color: white;

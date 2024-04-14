@@ -12,15 +12,18 @@ const data = [{
         }
 ];
 
-ussd();
 
 const div = document.querySelector('.div');
-
 const button = document.querySelector('.send-btn');
+   
+
 button.addEventListener("click", () => {
-    ussd();
-    if (code = '*312#') {
+  
+    const inputElement = document.querySelector(".input-js");
+     const code = Number(inputElement.value);    
+    if (code) {
         const simNetWork = prompt("Enter Sim Network");
+       
        if(simNetWork === 'mtn'){
         data[0].Mtn.forEach((mtn) => {
             console.log([mtn][0][2]);
@@ -60,7 +63,7 @@ button.addEventListener("click", () => {
             `;
             div.innerHTML += html;
         }); 
-       } else if (simNetWork === 'etisalat') {
+       } else if (simNetWork === '9mobile') {
         data[3].Etisalat.forEach((etisalat, index) => {
 
             let html = `
@@ -73,15 +76,13 @@ button.addEventListener("click", () => {
             div.innerHTML += html;
         }); 
        }
+      
     } 
+    else{
+        alert("Enter correct phone number");
+    }
+   
 });
 
-function ussd(code) {
-    const inputElement = document.querySelector('.input-js');
-    code = inputElement.value; 
-    code;
-   inputElement.value = ""; 
-}
 
-
-
+    
