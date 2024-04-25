@@ -16,73 +16,65 @@ const data = [{
 const div = document.querySelector('.div');
 const button = document.querySelector('.send-btn');
    
-
 button.addEventListener("click", () => {
-  
     const inputElement = document.querySelector(".input-js");
-     const code = Number(inputElement.value);    
-    if (code) {
+    const phoneNumber = Number(inputElement.value);
+    
+    // Validate if phoneNumber is a number and has 11 digits
+    if (!isNaN(phoneNumber) && phoneNumber.toString().length === 11) {
+        let networkSelected = false; // Flag to track if a network has been selected
         const simNetWork = prompt("Enter Sim Network");
-       
-       if(simNetWork === 'mtn'){
-        data[0].Mtn.forEach((mtn) => {
-            console.log([mtn][0][2]);
-            let html = `
-                
-                <ul class ="mtn-ul">
-                <li>${mtn}<img src="images/mtn.png" alt=""></li> 
-                </ul>
+        
+        // Check if simNetWork prompt is not cancelled
+        if (simNetWork) {
+            const simNetworkLowerCase = simNetWork.toLowerCase();
+            if (simNetworkLowerCase === 'mtn') {
+                if (data && data[0] && data[0].Mtn) {
+                    data[0].Mtn.forEach((mtn) => {
+                        appendToList(mtn, "mtn-ul", "images/mtn.png");
+                    });
+                }
+                networkSelected = true;
+            } else if (simNetworkLowerCase === 'glo') {
+                if (data && data[1] && data[1].Glo) {
+                    data[1].Glo.forEach((glo) => {
+                        appendToList(glo, "glo-ul", "images/glo.png");
+                    });
+                }
+                networkSelected = true;
+            } else if (simNetworkLowerCase === 'airtel') {
+                if (data && data[2] && data[2].Airtel) {
+                    data[2].Airtel.forEach((airtel) => {
+                        appendToList(airtel, "airtel-ul", "images/airtel.png");
+                    });
+                }
+                networkSelected = true;
+            } else if (simNetworkLowerCase === '9mobile') {
+                if (data && data[3] && data[3].Etisalat) {
+                    data[3].Etisalat.forEach((etisalat) => {
+                        appendToList(etisalat, "etisalat-ul", "images/mobile.png");
+                    });
+                }
+                networkSelected = true;
+            } else {
+                alert("Invalid SIM Network entered.");
+            }
+        }
 
-            `;
-           
-            div.innerHTML += html;
-            
-        }) 
-       }else if (simNetWork === 'glo') {
-         data[1].Glo.forEach((glo, index) => {
-
-            let html = `
-                
-                <ul class="glo-ul">
-                <li>${glo}<img src="images/glo.png" alt=""></li> 
-                </ul>
-
-            `;
-            div.innerHTML += html;
-        }); 
-
-       } else if (simNetWork === 'airtel') {
-        data[2].Airtel.forEach((airtel, index) => {
-
-            let html = `
-                
-                <ul class="airtel-ul">
-                <li>${airtel}    <img src="images/airtel.png" alt=""></li> 
-                </ul>
-
-            `;
-            div.innerHTML += html;
-        }); 
-       } else if (simNetWork === '9mobile') {
-        data[3].Etisalat.forEach((etisalat, index) => {
-
-            let html = `
-                
-                <ul class="etisalat">
-                <li>${etisalat} <img src="images/mobile.png" alt=""></li> 
-                </ul>
-
-            `;
-            div.innerHTML += html;
-        }); 
-       }
-      
-    } 
-    else{
-        alert("Enter correct phone number");
+        // If a network has been selected, disable the button
+        if (networkSelected) {
+            button.disabled = true;
+        }
+    } else {
+        alert("Enter a correct 11-digit phone number.");
     }
-   
 });
 
-
-    
+function appendToList(item, className, imagePath) {
+    let html = `
+        <ul class="${className}">
+            <li>${item}<img src="${imagePath}" alt=""></li> 
+        </ul>
+    `;
+    div.innerHTML += html; // Assuming 'div' is defined somewhere in your code
+}
